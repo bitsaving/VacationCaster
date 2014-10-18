@@ -17,6 +17,7 @@ end
 group :development, :test do
   gem 'sqlite3', '1.3.9'    # dev & test database
   gem 'figaro', '0.7.0'     # env variables
+  gem 'jazz_hands'
 end
 
 # Paging
