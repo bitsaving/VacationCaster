@@ -5,3 +5,11 @@
  */
 @import "framework_and_overrides";
 
+body{
+	background-image: image-url("tahoe.jpg");
+	background-size: cover;
+}
+
+.container .row .col-sm-12{
+	background: rgba(255,255,255,.6);
+}
