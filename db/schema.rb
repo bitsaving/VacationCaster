@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018174237) do
+ActiveRecord::Schema.define(version: 20141018194622) do
+
+  create_table "listings", force: true do |t|
+    t.string   "title"
+    t.decimal  "price",         precision: 8, scale: 2
+    t.float    "lat"
+    t.float    "lng"
+    t.text     "calendar_data"
+    t.integer  "lid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "listings_searches", force: true do |t|
+    t.integer "listing_id"
+    t.integer "search_id"
+  end
+
+  add_index "listings_searches", ["listing_id", "search_id"], name: "index_listings_searches_on_listing_id_and_search_id"
+  add_index "listings_searches", ["search_id"], name: "index_listings_searches_on_search_id"
 
   create_table "searches", force: true do |t|
     t.string   "options"
