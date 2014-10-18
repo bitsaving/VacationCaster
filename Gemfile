@@ -57,3 +57,8 @@ end
 group :test do
   gem 'capybara', '2.4.1'
 end
+
+gem 'mechanize'
+gem 'nokogiri'
+gem 'redis'
+gem 'resque'
