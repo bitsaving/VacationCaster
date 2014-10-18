@@ -22,6 +22,8 @@ module Vacaycaster
     
     # Test framework
     config.generators.test_framework :rspec
+
     
+    Dir[Rails.root.join('lib/*.rb')].each { |file| require file }
   end
 end
