@@ -13,10 +13,7 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :options %><br>
-      <%= f.text_field :options %>
-    </div>
+      <%= f.hidden_field :options %>
       <%= f.hidden_field :name, placeholder: "Suprise snowboarding trip to Tahoe" %>
       <%= f.hidden_field :start_date %>
       <input name="search[email]" id="search_email" type="hidden">
