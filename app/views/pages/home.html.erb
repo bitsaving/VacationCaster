@@ -1,16 +1,107 @@
-<% title("Find last minute canclations") %>
-<h1><i class="fa fa-home"></i> Vacation Caster</h1>
- <h3>Find cancled airbnb bookings.<br> Get the best price, at a moments notice.</h3>
- </h1>
+<style type="text/css">
+      #map-canvas { height: 326px; margin: 0; padding: 0; width: 326px;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9YYuZq29v40PmgVqGM77mE60u-Lui2K8">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        price_slider = $("#ex2").slider({}).on("slide", function(slideEvt) {
+        	console.log(slideEvt)
+					$(".low_price").text("$"+slideEvt.value[0]);
+					$(".high_price").text("$"+slideEvt.value[1]);
 
-<p>
-	<b>How it works</b>
-	<ol>
-		<li>Drag ↓bookmarklet to bookmarks bar↑</li>
-		<ul><br><li><a onclick="alert('Drag me to your bookmarks bar'); return false;" class="btn btn-primary" href='javascript:(function()%7Bd%3Ddocument%3Bs%3Dd.createElement("script")%3Bs.src%3D"//<%= bookmarklet_url %>/bookmarklet.js"%3Bd.children%5B0%5D.appendChild(s)%3B%7D)()%3B'>✈ Watch for vacancies</a></li><br></ul>
-		<li>Find where you want to visit on Airbnb.</li>
-		<li>Click the bookmarklet</li>
-		<li>Alerts when something opens up</li>
-	</ol>
-</p>
+				});
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
+<h1 style="font-size:400%" class="text-center">Where do you want to go?</h1>
+<h3 class="text-center">Find cancled airbnb bookings.<br> Get the best price, at a moments notice.</h3>
+<p>Vacation Caster monitors airbnb for other people's cancled reservations. Hosts can't fill a last minute vacancy, but you can. Get an alert when hosts need a guest, and get a discount.</p>
+
+<ul class="location_image_list row">
+	<li class="col-sm-4"><a href="#"><%= image_tag "soma.png", height: "326px", width: "326px" %><span>SOMA - SF</span></a></li>
+	<li class="col-sm-4"><a href="#"><%= image_tag "napa.jpeg" %><span>Napa</span></a></li>
+	<li class="col-sm-4"><a href="#"><%= image_tag "tahoe.jpeg" %><span>Lake Tahoe</span></a></li>
+	<!-- <li class="col-sm-4"><div id="map-canvas"></div></li> -->
+
+</ul>
+
+<div class="row text-center">
+	<h1>How long should we watch for vacancies?</h1>
+	<a class="btn btn-primary" href="#">Three days</a>
+	<a class="btn btn-primary" href="#">One week</a>
+	<a class="btn btn-primary" href="#">This weekend</a>
+</div>
+<div class="row">
+	<h1 class="text-center">How many people are there?</h1>
+	<select id="guests" name="guests">
+    <option value="1">1 Guest</option>
+		<option value="2">2 Guests</option>
+		<option value="3">3 Guests</option>
+		<option value="4">4 Guests</option>
+		<option value="5">5 Guests</option>
+		<option value="6">6 Guests</option>
+		<option value="7">7 Guests</option>
+		<option value="8">8 Guests</option>
+		<option value="9">9 Guests</option>
+		<option value="10">10 Guests</option>
+		<option value="11">11 Guests</option>
+		<option value="12">12 Guests</option>
+		<option value="13">13 Guests</option>
+		<option value="14">14 Guests</option>
+		<option value="15">15 Guests</option>
+		<option value="16">16+ Guests</option>
+  </select>
+</div>
+
+<div class="row text-center">
+	<h1>What price range are you looking for?</h1>
+		 <b class="low_price">$250</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-tooltip="hide" data-slider-value="[250,450]"/> <b class="high_price">$450</b>
+</div>
+<div class="row room_type">
+	<h1 class="text-center">What room type do you need?</h1>
+    <div class="col-sm-4">
+      <label id="entire-place-tooltip" class="row row-table row-condensed checkbox">
+        <div class="col-2 checkbox_container">
+          <input type="checkbox" name="room-type" value="Entire home/apt">
+        </div>
+        <div class="col-8 col-middle text-center">
+          <i class="icon icon-entire-place h2"></i>
+          <div>Entire Place</div>
+        </div>
+        <div class="col-2 col-middle">&nbsp;</div>
+      </label>
+    </div>
+    <div class="col-sm-4">
+      <label id="private-room-tooltip" class="row row-table row-condensed checkbox">
+        <div class="col-2 checkbox_container">
+          <input type="checkbox" name="room-type" value="Private room">
+        </div>
+        <div class="col-8 col-middle text-center">
+          <i class="icon icon-private-room h2"></i>
+          <div>Private Room</div>
+        </div>
+        <div class="col-2 col-middle">&nbsp;</div>
+      </label>
+    </div>
+
+    <div class="col-sm-4">
+      <label id="shared-room-tooltip" class="row row-table row-condensed checkbox">
+        <div class="col-2 checkbox_container">
+          <input type="checkbox" name="room-type" value="Shared room">
+        </div>
+        <div class="col-2 col-middle text-center">
+          <i class="icon icon-shared-room h2"></i>
+          <div>Shared Room</div>
+        </div>
+        <div class="col-2 col-middle">&nbsp;</div>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+	Summery of what's up<br>
+	<a href="#" class="btn btn-primary btn-lg">Start Watching</a>
+</div>

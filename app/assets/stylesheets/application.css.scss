@@ -2,20 +2,79 @@
  * Overwritten by RailsBricks
  *
  *= require_self
+ *= require bootstrap-slider.min
  */
 @import "framework_and_overrides";
 
 body{
-	background-image: image-url("tahoe.jpg");
-	background-size: cover;
+	// background-image: image-url("tahoe_bg.jpg");
+	// background-size: cover;
 }
 
-.container .row .col-sm-8{
+.main.container .row>.col-sm-12{
 	background: rgba(255,255,255,.75);
+	min-height: 300px;
 }
 
 .center_vertical{
-  position: relative;
-  top: 50%;
-  transform: translateY(45%);
+  // position: relative;
+  // top: 50%;
+  // transform: translateY(45%);
+}
+
+ul.location_image_list {
+	margin: 0 auto;
+	text-align: center;
+
+	li{
+		list-style: none none;
+		a{
+			text-decoration: none;
+			height: 325px;
+			display: block;
+		}
+		span{
+			font-size: 36px;
+			color:white;
+			position: relative;
+			top: -200px;
+			text-align: center;
+			width: 326px;
+			display: block;
+			text-shadow: rgba(33,33,33,.9) 1px 1px 20px;
+		}
+	}
+}
+
+
+select#guests{
+	height: 44px;
+	border-radius: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 2em;
+	display: block;
+	padding: 8px 10px;
+	width: 100%;
+	transition: border-color 0.2s;
+	border: 1px solid #dce0e0;
+	background-color: #fff;
+}
+
+.row.room_type{
+	.checkbox_container{
+		border: 1px solid pink;
+		/* display: block; */
+		position: relative;
+		left: 190px;
+		top: 52px;
+		width: 10px;
+	}
+}
+
+.low_price,.high_price{
+	min-width: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display:inline-block;
 }
