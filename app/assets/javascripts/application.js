@@ -56,7 +56,7 @@ function AirbnbSearchOptions(){
 		},
 		buildQ: function(){
 			var q;
-			q = location+"&guests="+guests;
+			q = "?"+location+"&guests="+guests;
 			if(typeof lo_price!=="undefined"){
 				q += "&price_min="+lo_price
 			}
@@ -115,11 +115,15 @@ function init(){
 	var $locationImages = $(".location_image_list")
 	var $options = $("input#search_options")
 
-	$('#element').tooltip()
+	$('#email').tooltip()
+	$("#email").blur(function(){
+		$("#search_email").val(this.value)
+	})
   $locationImages.on('click', 'a',function(){
   	searchOptions.setLocation(this.getAttribute("data-location"))
   	$options.val(searchOptions.buildQ())
   	searchSummary.setLocation(this.getAttribute("data-human-readable"))
+  	$("#search_name").val("Going to "+this.getAttribute("data-human-readable"))
   	$sceachStuff = $("#searchStuff")
   	$("#searchStuff")
   		.fadeIn(function(){ $.scrollTo($sceachStuff) })
@@ -161,6 +165,10 @@ function init(){
 		$options.val(searchOptions.buildQ())
 	})
 	$("start_watching").on("click",function(){
+
 		$("form#new_search").submit()
 	})
 }
+$(function(){
+	init();
+})

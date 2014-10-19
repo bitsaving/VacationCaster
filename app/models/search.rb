@@ -3,6 +3,10 @@ class Search < ActiveRecord::Base
 	after_create :import_listings
 	has_and_belongs_to_many :listings, through: "listings_searches"
 
+	def location
+		self.name[/going to (.+)/i, 1]+", CA"
+	end
+
 	def self.in_range(range)
 	  where(
 	  	'(start_date BETWEEN ? AND ? OR end_date BETWEEN ? AND ?) OR (start_date <= ? AND end_date >= ?)',

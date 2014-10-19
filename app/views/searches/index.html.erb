@@ -1,19 +1,23 @@
-<h1>Your Surveys</h1>
+<h1>My Searches</h1>
 
 
 <% @searches.each do |search| %>
-  <h3><%= search.name %> <small> <%= search.listings.count %> listings being watched</small></h3>
+	<div class="row">
+	  <h3><%= search.name %></h3>
 
+		<img class="col-sm-2" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= search.location %>&size=160x160&zoom=10">
+	  <p>
 
-  <p>
-    Start: <%= search.start_date %><br>
-    End: <%= search.end_date %><br>
-    <%= (search.end_date - search.start_date).to_i %> days
-  </p>
+	    <%= search.start_date %><br>
+	    <%= search.end_date %><br>
+	    (<%= (search.end_date - search.start_date).to_i %> days)<br>
+	     <small> <%= search.listings.count %> listings being watched</small>
+	  </p>
 
-  <a class="btn btn-default" href="https://www.airbnb.com/s/<%= search.options %>">View on airbnb</a><br>
-  <%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <hr>
+	  <a class="btn btn-default" href="https://www.airbnb.com/s/<%= search.options %>">View on airbnb</a><br>
+	  <%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+	  <hr>
 <% end %>
 
 <br>
