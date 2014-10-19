@@ -19,6 +19,7 @@
     </div>
       <%= f.hidden_field :name, placeholder: "Suprise snowboarding trip to Tahoe" %>
       <%= f.hidden_field :start_date %>
+      <input name="search[email]" id="search_email" type="hidden">
       <%= f.hidden_field :end_date %>
     <br>
     <%= f.submit  disabled:"disabled", class:"btn btn-primary btn-lg pull-left", id:"create_new_search_btn" %>
