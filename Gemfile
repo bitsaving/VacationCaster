@@ -20,6 +20,10 @@ group :development, :test do
   gem 'jazz_hands'
 end
 
+group :development do
+	gem 'quiet_assets', group: :development
+end
+
 # Paging
 gem 'kaminari', '0.16.1'
 
