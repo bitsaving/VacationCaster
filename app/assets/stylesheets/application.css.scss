@@ -38,6 +38,9 @@ ul.location_image_list {
 			height: 325px;
 			display: block;
 		}
+		.active img{
+			box-shadow: rgba(0,0,0,1) 1px 1px 30px;
+		}
 		span{
 			font-size: 36px;
 			color:white;

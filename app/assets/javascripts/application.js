@@ -120,6 +120,8 @@ function init(){
 		$("#search_email").val(this.value)
 	})
   $locationImages.on('click', 'a',function(){
+  	$locationImages.find(".active").removeClass("active")
+  	$(this).addClass("active")
   	searchOptions.setLocation(this.getAttribute("data-location"))
   	$options.val(searchOptions.buildQ())
   	searchSummary.setLocation(this.getAttribute("data-human-readable"))
