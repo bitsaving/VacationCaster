@@ -5,64 +5,72 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9YYuZq29v40PmgVqGM77mE60u-Lui2K8">
     </script>
     <script type="text/javascript">
-      function initialize() {
-        price_slider = $("#ex2").slider({}).on("slide", function(slideEvt) {
-        	console.log(slideEvt)
-					$(".low_price").text("$"+slideEvt.value[0]);
-					$(".high_price").text("$"+slideEvt.value[1]);
-
-				});
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', init);
     </script>
 
 <h1 style="font-size:400%" class="text-center">Where do you want to go?</h1>
-<h3 class="text-center">Find cancled airbnb bookings.<br> Get the best price, at a moments notice.</h3>
-<p>Vacation Caster monitors airbnb for other people's cancled reservations. Hosts can't fill a last minute vacancy, but you can. Get an alert when hosts need a guest, and get a discount.</p>
+<h3 class="text-center">Find canceled <img alt="Airbnb!" style="display:inline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAAAgCAMAAADXAP0hAAAAtFBMVEUAAAD%2FXGH%2FXGH%2FVVf%2FVFr%2FXWL%2FWl%2F%2FTVH%2FAAD%2FdHT%2Fuv%2F%2FV1v%2FV1v%2FXWH%2FXGL%2FXGH%2FWFv%2FWl7%2FXGD%2FXWH%2FXWL%2FXGH%2FXGL%2FXWH%2FW2D%2FXGH%2FW2D%2FXGD%2FVFn%2FXWL%2FW2H%2FW2D%2FXGH%2FXWL%2FW2D%2FXGD%2FW2H%2FXGH%2FXGH%2FXGH%2FXGH%2FV13%2FXGH%2FXGH%2FXGD%2FXGH%2FWmD%2FXGH%2FXWL%2BWl%2F%2FW2D%2FXGH%2FYGX%2FX2T%2FXmP%2FWmD%2FY2n%2FZWv%2FYmf%2FXmSk3u%2FvAAAAM3RSTlMAceIIBcr7AwECAREW0z3uGyZY3dnGwFI56IOaDM9d%2BPRCd2F8T2tJaB%2BhrouzMLmoNZMHw7g%2BAAAE4klEQVRIx7VWaXeiMBS9QiCgIuIubljrWqudJiTA%2FP%2F%2FNY9Aa6dT58OcTjzGJPcl15u3nOC9%2BeC7UWi9dGj0%2F5qP1jXLtMpFAxz%2Frfl4ya3DZTJTcvv%2FeDjGMpmUo3MRzOH9zdbzPo69e7ZfIszJYtg%2Bgx1kf702zyfp%2FyxmKa1WKYJhWfTL0f3WZmi%2BjefdbutrK%2FtPxIO9yB7AzZA55fCuGH4OnajWw7BLktevxDH0kuSE5qfFzbsEjp602vfkcGwLN3uCX88aUp7Av6LZSPkM%2F7OYm0M8Nswfwe%2BGSuG%2B72dopGr2Nc1SiSc0P1FnAxLj%2BYz5Rs60fbOouRlnnk9f9iKsCRjn4Mwmmp8z2ARWN1GuEuSXNKl6AqPmfRSzA5kYUyL6LOf3yfEWAiXN6TcTr5oYmucauXmGxHCwyXgf0fwP7%2Fho9%2BLz0o72%2BzYm63ULnf3a68Sv3Z2Ur%2FbuHG%2FntN%2Fv7CdYx%2BdDZNT8fJlvznGPTq7FOFmDgL2jsiw5dcFJzgPYB98dpmkq5XAgizEWhVzDKlbXVZpvN4V2Apmm6WCL5nyQhVchU5k0QBmig4UkyFrCx1umNMlnhfU8WuWDLtArTBa9iX4stJYqldpVYzhCdzAQrpQiIxqXzlWpFukS80BoWlVaFzuKNFcbRMtGdWlDShR0Q%2FnaAn4E%2BQw%2BM%2FreWDrKFYOHbaMv3JRolChp9PRx3WvvpCucwzieah0eeWBWx4EWCywJCXbbR0vonxcTouSJJg7ZCHQ%2BJiLsovKW91ZUU%2BGUGd3ta3Wj2ZsQkGJU%2Fp3I0jKmVTEG6AgdtpdSLMymQKez8pQrxZWNV%2BMOj7NFOqFrDrJDJcfDnHbvy6jFVd1o3AtMQNMZNrdxSIkvEGICu9m2xOrYqwLaxjjVAxKzl9Mu%2Fcxyc00ed2SHWHfZwjZymjiGIozKuuyNxAeaH6S9CmgOHx2hHHshCGIoabo9SQHdpM9lpRMyec7PxIqHvExnjw51Ixq0%2BkWvLnLtqUguoOT8kobUsDJMlXDs4HeaJ3CPl1c4BfVJBJ9jnZZVjXImc5gHTrQjvwkYfSKNTfW%2Fo8YjuxeVvvDgsxoQ8krXCZxqFeSNDXjlKUZwdyr3Rg6jeF6JhxafP7pu%2BplG6nBj8%2B6rcuUYg99o3FVjztsxhf4BUSLI3hTbLJj72MrwWM3PuSnE5h9IV02HfUV5s8VQGJpVTbMSYuCEalU8gy7NrWmSkkar%2FnBK%2FA5D%2FOGwLEar7JgJ4yhZXQzEEQ2kEKkUWmU9BFUVUBP45dUqTfkpRDFqY94nqKQJC3FcviOLIxDUnqZum4r1OX97Cfh4yndgFdSKF2EYbOLhqIPZaHTxXkZX49HecNho9MOp02Ak7jS6XkprQtvr4fDxMAini8ey3LlJVNdbiukiXKl1xYq32KsowY4Rw502j7qcjL5Ejswgmmi8%2BiXCFkK9l0yGnaGpsEpw9Vi5debXrzHcVsmu7Jo3pC%2F3dbYzXCylThy8Fne6lWmz6e4zhKD7SAXNKAQ87nMOrKfZ0Mqf52DM5wxRKCbf9tCNkjQ2A9ZYZVd7HWaLiZkfHfOy%2BK52kPLam3R2TiFnDLgMcnEaTzoPVtY%2Ffh%2BNj02YZ0LlWX9DMwr6mUvzNC%2BGEfh3vtGP8dAaPB9aJiY4CTqX8yX7RpZfNJqfg2JAld4AAAAASUVORK5CYII%3D"> bookings.<br> Get the best price, at a moments notice.</h3>
+<br>
 
 <ul class="location_image_list row">
-	<li class="col-sm-4"><a href="#"><%= image_tag "soma.png", height: "326px", width: "326px" %><span>SOMA - SF</span></a></li>
-	<li class="col-sm-4"><a href="#"><%= image_tag "napa.jpeg" %><span>Napa</span></a></li>
-	<li class="col-sm-4"><a href="#"><%= image_tag "tahoe.jpeg" %><span>Lake Tahoe</span></a></li>
+	<li class="col-sm-4"><a data-human-readable="SOMA - SF" data-location="soma" href="#"><%= image_tag "soma.png", height: "326px", width: "326px" %><span>SOMA - SF</span></a></li>
+	<li class="col-sm-4"><a data-human-readable="Napa, CA" data-location="napa" href="#"><%= image_tag "napa.jpeg" %><span>Napa</span></a></li>
+	<li class="col-sm-4"><a data-human-readable="Lake Tahoe" data-location="tahoe" href="#"><%= image_tag "tahoe.jpeg" %><span>Lake Tahoe</span></a></li>
 	<!-- <li class="col-sm-4"><div id="map-canvas"></div></li> -->
-
 </ul>
+<br>
+<section id="searchStuff" >
+	<div class="row search_timeframe">
+		<h1 class="inline-header col-sm-6">When do you want to go?</h1>
+		<div class="col-sm-6" style="margin-top: 19px">
+			<a class="btn btn-default"
+					data-desc="the next three days"
+					data-start-date="<%= DateTime.now.strftime "%F" %>"
+					data-end-date="<%= DateTime.now.advance(days: 3).strftime "%F" %>"
+					href="#">Three days</a>
+			<a class="btn btn-default"
+					data-desc="this week"
+					data-start-date="<%= DateTime.now.strftime "%F" %>"
+					data-end-date="<%= DateTime.now.advance(days: 7).strftime "%F" %>"
+					href="#">One week</a>
+			<a class="btn btn-default"
+					data-desc="this weekend"
+					data-start-date="<%= (DateTime.now.end_of_week - 2.days).strftime "%F" %>"
+					data-end-date="<%= DateTime.now.end_of_week.strftime "%F" %>"
+					href="#">This weekend</a>
+			</div>
+	</div>
+	<div class="row">
+		<h1 class="inline-header col-sm-6">How many people are there?</h1>
+		<div style="height: 60px" class="col-sm-6">
+			<select id="guests" name="guests">
+		    <option value="1">1 Guest</option>
+				<option value="2">2 Guests</option>
+				<option value="3">3 Guests</option>
+				<option value="4">4 Guests</option>
+				<option value="5">5 Guests</option>
+				<option value="6">6 Guests</option>
+				<option value="7">7 Guests</option>
+				<option value="8">8 Guests</option>
+				<option value="9">9 Guests</option>
+				<option value="10">10 Guests</option>
+				<option value="11">11 Guests</option>
+				<option value="12">12 Guests</option>
+				<option value="13">13 Guests</option>
+				<option value="14">14 Guests</option>
+				<option value="15">15 Guests</option>
+				<option value="16">16+ Guests</option>
+		  </select>
+	  </div>
+	</div>
 
-<div class="row text-center">
-	<h1>How long should we watch for vacancies?</h1>
-	<a class="btn btn-primary" href="#">Three days</a>
-	<a class="btn btn-primary" href="#">One week</a>
-	<a class="btn btn-primary" href="#">This weekend</a>
-</div>
-<div class="row">
-	<h1 class="text-center">How many people are there?</h1>
-	<select id="guests" name="guests">
-    <option value="1">1 Guest</option>
-		<option value="2">2 Guests</option>
-		<option value="3">3 Guests</option>
-		<option value="4">4 Guests</option>
-		<option value="5">5 Guests</option>
-		<option value="6">6 Guests</option>
-		<option value="7">7 Guests</option>
-		<option value="8">8 Guests</option>
-		<option value="9">9 Guests</option>
-		<option value="10">10 Guests</option>
-		<option value="11">11 Guests</option>
-		<option value="12">12 Guests</option>
-		<option value="13">13 Guests</option>
-		<option value="14">14 Guests</option>
-		<option value="15">15 Guests</option>
-		<option value="16">16+ Guests</option>
-  </select>
-</div>
-
-<div class="row text-center">
-	<h1>What price range are you looking for?</h1>
-		 <b class="low_price">$250</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-tooltip="hide" data-slider-value="[250,450]"/> <b class="high_price">$450</b>
-</div>
-<div class="row room_type">
-	<h1 class="text-center">What room type do you need?</h1>
-    <div class="col-sm-4">
+	<div class="row price_range">
+		<h1 class="inline-header col-sm-6">What is your price range?</h1>
+		<div class="col-sm-6" style="margin-top: 29px"><b class="low_price">$10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-tooltip="hide" data-slider-value="[10,1000]"/> <b class="high_price">$1000</b></div>
+	</div>
+	<div class="row room_type">
+		<h1 class="inline-header col-sm-6">What room type do you need?</h1>
+    <div class="col-sm-2">
       <label id="entire-place-tooltip" class="row row-table row-condensed checkbox">
         <div class="col-2 checkbox_container">
           <input type="checkbox" name="room-type" value="Entire home/apt">
@@ -74,7 +82,7 @@
         <div class="col-2 col-middle">&nbsp;</div>
       </label>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-2">
       <label id="private-room-tooltip" class="row row-table row-condensed checkbox">
         <div class="col-2 checkbox_container">
           <input type="checkbox" name="room-type" value="Private room">
@@ -87,7 +95,7 @@
       </label>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-2">
       <label id="shared-room-tooltip" class="row row-table row-condensed checkbox">
         <div class="col-2 checkbox_container">
           <input type="checkbox" name="room-type" value="Shared room">
@@ -100,8 +108,19 @@
       </label>
     </div>
   </div>
-</div>
-<div class="row">
-	Summery of what's up<br>
-	<a href="#" class="btn btn-primary btn-lg">Start Watching</a>
-</div>
+	<div class="row">
+		<h1 class="inline-header col-sm-6">Where should alerts go?</h1>
+		<div class="col-sm-6"><input type="email" data-toggle="tooltip" data-placement="bottom" title="Sorry about requiring email." class="form-control" style="margin-top: 22px;" placeholder="your email" ></div>
+  </div>
+	<div class="row">
+		<div class="col-sm-10 hidden"  id="summary">
+			You are searching for canclations in <span class="choice location"></span>,
+			for <span class="choice duration"></span>.
+			You are looking for listings that accomodate <span class="choice guests">1 guest</span>,
+			between <span class="choice range">$10 and $1000</span>.
+			<span class="room_types">Entire Place, Private Room, Shared Room listings are being searched.</span>
+			<br>
+		</div>
+		<div class="col-sm-2 pull-right"><%= render 'searches/form_landing' %></div>
+	</div>
+</section>

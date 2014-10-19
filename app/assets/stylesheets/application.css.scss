@@ -10,12 +10,17 @@ body{
 	// background-image: image-url("tahoe_bg.jpg");
 	// background-size: cover;
 }
-
+h1.inline-header{
+	display: inline-block;
+}
 .main.container .row>.col-sm-12{
 	background: rgba(255,255,255,.75);
 	min-height: 300px;
 }
 
+section .row{
+	height: 100px;
+}
 .center_vertical{
   // position: relative;
   // top: 50%;
@@ -55,18 +60,17 @@ select#guests{
 	padding-right: 2em;
 	display: block;
 	padding: 8px 10px;
-	width: 100%;
+	// width: 100%;
 	transition: border-color 0.2s;
 	border: 1px solid #dce0e0;
 	background-color: #fff;
+	margin-top: 13px;
 }
 
 .row.room_type{
 	.checkbox_container{
-		border: 1px solid pink;
-		/* display: block; */
 		position: relative;
-		left: 190px;
+		left: 100px;
 		top: 52px;
 		width: 10px;
 	}
@@ -77,4 +81,8 @@ select#guests{
 	margin-left: 10px;
 	margin-right: 10px;
 	display:inline-block;
+}
+
+#summary .choice{
+	font-weight: bold;
 }
