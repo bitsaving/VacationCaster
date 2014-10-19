@@ -2,7 +2,6 @@ require 'cgi'
 require 'mechanize'
 require 'json'
 require 'nokogiri'
-require 'pry'
 
 class Airbnb
 	SEARCH_URL  = "https://www.airbnb.com/search/search_results"
