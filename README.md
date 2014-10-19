@@ -3,7 +3,7 @@ VacationCaster
 
 ***VacationCaster scans airbnb for last minute cancellations***
 
-VacationCaster helps AirBnB guests by finding them potential deals from hosts who are dealing with potentially lost revenue. The goal of this project is to bring aspects of yield management to the vacation rental marketplace. 
+[VacationCaster](http://dry-cove-4518.herokuapp.com/) helps AirBnB guests by finding them potential deals from hosts who are dealing with potentially lost revenue. The goal of this project is to bring aspects of yield management to the vacation rental marketplace. 
 
 The heavy lifting of finding last minute cancellations is handled by background jobs. Background jobs and scheduling jobs are handled by resque and resque-scheduler, respectively. User, search, and AirBnB data is persisted with Postgres.
 
