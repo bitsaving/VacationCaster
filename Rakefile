@@ -11,3 +11,9 @@ require 'resque/scheduler/tasks'
 task "resque:setup" => :environment do
   ENV['QUEUE'] = '*'
 end
+
+desc "check for updated calendars"
+task "resque:EnqueCalendarGetters" => "resque:setup" do
+	Resque.enqueue(EnqueCalendarGetters)
+end
+
