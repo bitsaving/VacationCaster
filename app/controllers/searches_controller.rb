@@ -15,6 +15,10 @@ class SearchesController < ApplicationController
   # GET /searches/new
   def new
     @search = Search.new
+    @search.name = "swag"
+    @search.start_date = "today"
+    @search.end_date = "tomorrow"
+    @search.options = params[:options]
   end
 
   # GET /searches/1/edit
@@ -25,6 +29,7 @@ class SearchesController < ApplicationController
   # POST /searches.json
   def create
     @search = Search.new(search_params)
+    @search.user = current_user
 
     respond_to do |format|
       if @search.save

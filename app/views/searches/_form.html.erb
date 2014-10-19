@@ -17,11 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
+    <%= f.text_field :name, placeholder:"Suprise snowboarding trip to Tahoe" %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
@@ -31,10 +27,7 @@
     <%= f.label :end_date %><br>
     <%= f.text_field :end_date %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
