@@ -126,10 +126,9 @@ function init(){
   	$options.val(searchOptions.buildQ())
   	searchSummary.setLocation(this.getAttribute("data-human-readable"))
   	$("#search_name").val("Going to "+this.getAttribute("data-human-readable"))
-  	$sceachStuff = $("#searchStuff")
-  	$("#searchStuff")
-  		.fadeIn(function(){ $.scrollTo($sceachStuff) })
-  		.removeClass('hidden')
+		$(".search_timeframe")
+			.animate({backgroundColor:"lightyellow"},100)
+			.animate({backgroundColor:"white"},2500)
   	return false;
   })
   $guestsSelect.on("change",function(){
@@ -166,10 +165,17 @@ function init(){
 		searchOptions.setRoomType(selected_room_types)
 		$options.val(searchOptions.buildQ())
 	})
-	$("start_watching").on("click",function(){
 
-		$("form#new_search").submit()
+	$("form#new_search").submit(function(){
+		var $email = $("#email")
+		var isFormOK = $email[0].checkValidity() && $email[0].value.length>5
+		if(isFormOK==false){
+			$("#email").tooltip("show")
+			setTimeout(function(){ $("#email").tooltip("hide") },2500)
+			return false
+		}
 	})
+
 }
 $(function(){
 	init();
