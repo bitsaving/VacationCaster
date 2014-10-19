@@ -11,13 +11,13 @@ module GetCalendarForListing
 			return
 		end
 		if hole.empty?
-			puts "GetCalendarForListing: no holes found"
+			puts "GetCalendarForListing: lid:#{listing_id} no holes found"
 			return
 		else
 			hole = hole.sort_by("date")
 			searches = listing.searches.in_range(hole)
 			if searches.empty?
-				puts "GetCalendarForListing: no searches found for hole"
+				puts "GetCalendarForListing: lid:#{listing_id} no searches found for hole"
 				return
 			end
 			searches.each do |search|
