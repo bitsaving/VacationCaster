@@ -11,9 +11,11 @@
 </head>
 <body>
   <div id="wrap">
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+    <% if user_signed_in? %>
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+    <% end %>
       
     <div class="container main">
        
