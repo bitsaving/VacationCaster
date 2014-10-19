@@ -22,6 +22,7 @@ end
 
 group :development do
 	gem 'quiet_assets', group: :development
+  gem 'thin'
 end
 
 # Paging
