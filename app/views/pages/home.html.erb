@@ -7,7 +7,7 @@
 	<b>How it works</b>
 	<ol>
 		<li>Drag ↓bookmarklet to bookmarks bar↑</li>
-		<ul><br><li><a onclick="alert('Drag me to your bookmarks bar'); return false;" class="btn btn-primary" href='javascript:(function()%7Bd%3Ddocument%3Bs%3Dd.createElement("script")%3Bs.src%3D"//localhost:3000/bookmarklet.js"%3Bd.children%5B0%5D.appendChild(s)%3B%7D)()%3B'>✈ Watch for vacancies</a></li><br></ul>
+		<ul><br><li><a onclick="alert('Drag me to your bookmarks bar'); return false;" class="btn btn-primary" href='javascript:(function()%7Bd%3Ddocument%3Bs%3Dd.createElement("script")%3Bs.src%3D"//<%= bookmarklet_url %>/bookmarklet.js"%3Bd.children%5B0%5D.appendChild(s)%3B%7D)()%3B'>✈ Watch for vacancies</a></li><br></ul>
 		<li>Find where you want to visit on Airbnb.</li>
 		<li>Click the bookmarklet</li>
 		<li>Alerts when something opens up</li>
