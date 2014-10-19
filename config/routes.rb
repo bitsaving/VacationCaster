@@ -3,11 +3,17 @@ require 'resque/scheduler/server'
 Vacaycaster::Application.routes.draw do
   resources :searches
 
-  root "pages#home"    
+	unauthenticated do
+	  root "pages#home", as: :authenticated_root
+	end
+
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   
-    
+  authenticated :user do
+  	root "searches#index"
+  end
+
   devise_for :users
   
   namespace :admin do
