@@ -3,6 +3,7 @@ require 'resque/scheduler/server'
 Vacaycaster::Application.routes.draw do
   resources :searches
 
+  get '/bookmarklet2', to: "pages#bookmarklet"
 	unauthenticated do
 	  root "pages#home", as: :authenticated_root
 	end

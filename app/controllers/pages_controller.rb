@@ -8,5 +8,10 @@ class PagesController < ApplicationController
   
   def inside
   end 
-    
+
+	def bookmarklet
+		url = request.env["HTTP_REFERER"]
+		# binding.pry
+	end
+
 end
