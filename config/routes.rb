@@ -1,3 +1,5 @@
+require 'resque/scheduler/server'
+
 Vacaycaster::Application.routes.draw do
   resources :searches
 
@@ -13,4 +15,8 @@ Vacaycaster::Application.routes.draw do
     resources :users
   end
   
+	mount Resque::Server.new, :at => '/resque', :constraints => lambda { |req|
+    req.env['warden'].authenticated? and req.env['warden'].user.admin?
+  }
+
 end

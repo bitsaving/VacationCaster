@@ -1,0 +1,5 @@
+put_stuff_on_the_queue:
+  every: 30m
+  class: EnqueCalendarGetters
+  args:
+  description: Puts all the calendars to be got on the queue
