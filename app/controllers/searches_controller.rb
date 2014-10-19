@@ -1,10 +1,10 @@
 class SearchesController < ApplicationController
   before_action :set_search, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /searches
   # GET /searches.json
   def index
-    @searches = Search.all
+    @searches = Search.where(user_id: current_user.id)
   end
 
   # GET /searches/1

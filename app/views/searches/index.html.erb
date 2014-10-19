@@ -1,35 +1,21 @@
-<h1>Listing searches</h1>
+<h1>Your Surveys</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Options</th>
-      <th>Name</th>
-      <th>Slug</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @searches.each do |search| %>
-      <tr>
-        <td><%= search.options %></td>
-        <td><%= search.name %></td>
-        <td><%= search.slug %></td>
-        <td><%= search.start_date %></td>
-        <td><%= search.end_date %></td>
-        <td><%= search.user_id %></td>
-        <td><%= link_to 'Show', search %></td>
-        <td><%= link_to 'Edit', edit_search_path(search) %></td>
-        <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @searches.each do |search| %>
+  <h3><%= search.name %> <small> <%= search.listings.count %> listings being watched</small></h3>
+
+
+  <p>
+    Start: <%= search.start_date %><br>
+    End: <%= search.end_date %><br>
+    <%= (search.end_date - search.start_date).to_i %> days
+  </p>
+
+  <a class="btn btn-default" href="https://www.airbnb.com/s/<%= search.options %>">View on airbnb</a><br>
+  <%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <hr>
+<% end %>
 
 <br>
 
-<%= link_to 'New Search', new_search_path %>
+<%#= link_to 'New Search', new_search_path %>
