@@ -1,15 +1,18 @@
 module GetCalendarForListing
 	@queue = :import
 	def self.perform(listing_id)
-		listing = Listing.find(listing_id)
-		fresh = Airbnb.get_calendar_for_listing(listing_id)
+		airbnb = Airbnb.new
+		listing = Listing.find_by_lid(listing_id)
+		puts "GetCalendarForListing: lid:#{listing_id} name:#{listing.title}"
+		fresh = airbnb.get_calendar_for_listing(listing_id)
 		stale = listing.calendar
-		hole = fresh-stale
-		listing.update_attribute(:calendar_data, fresh)
-		if stale.empty?
-			puts "GetCalendarForListing: listing just loaded"
+		listing.update_attribute(:calendar_data, fresh.to_json)
+		if stale.nil?
+			puts "GetCalendarForListing: lid:#{listing_id} listing just loaded"
 			return
 		end
+		hole = fresh-stale
+
 		if hole.empty?
 			puts "GetCalendarForListing: lid:#{listing_id} no holes found"
 			return
